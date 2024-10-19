@@ -1,11 +1,5 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
 function App() {
-  const [count, setCount] = useState(0)
-
+  
   return (
     <body>    
     {/* Intro */}
@@ -181,57 +175,6 @@ function App() {
         </div>        
     </div>    
 
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="js/parallax.min.js"></script>
-    <script src="js/jquery.singlePageNav.min.js"></script>
-    <script>
-
-        function checkAndShowHideMenu() {
-            if(window.innerWidth < 768) {
-                $('#tm-nav ul').addclassName('hidden');                
-            } else {
-                $('#tm-nav ul').removeclassName('hidden');
-            }
-        }
-
-        $(function(){
-            var tmNav = $('#tm-nav');
-            tmNav.singlePageNav();
-
-            checkAndShowHideMenu();
-            window.addEventListener('resize', checkAndShowHideMenu);
-
-            $('#menu-toggle').click(function(){
-                $('#tm-nav ul').toggleclassName('hidden');
-            });
-
-            $('#tm-nav ul li').click(function(){
-                if(window.innerWidth < 768) {
-                    $('#tm-nav ul').addclassName('hidden');
-                }                
-            });
-
-            $(document).scroll(function() {
-                var distanceFromTop = $(document).scrollTop();
-
-                if(distanceFromTop > 100) {
-                    tmNav.addclassName('scroll');
-                } else {
-                    tmNav.removeclassName('scroll');
-                }
-            });
-            
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-        });
-    </script>
 </body>
   )
 }
